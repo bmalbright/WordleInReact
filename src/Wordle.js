@@ -1,23 +1,21 @@
 import React from "react";
-import "..src/App.css";
+import './index.css';
 import { Container } from "react-bootstrap";
 
-const Wordle = () => {
+export default function Wordle() {
   return (
-    <div>
-      <Container>
+    <div >
+      <Container classname="wordle">
         <div class="title">
-          <h1>Wordle In React</h1>
+          <h1> Wordle In React! </h1>
         </div>
 
-        <div class="message-container">Message</div>
+        {/* <div class="message-container">Message</div>
 
         <div class="tile-container">Tiles</div>
 
-        <div class="keyboard-container">keyboard</div>
+        <div class="keyboard-container">keyboard</div> */}
       </Container>
     </div>
   );
-};
-
-export default Wordle;
+}
