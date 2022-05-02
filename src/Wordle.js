@@ -1,21 +1,31 @@
 import React from "react";
-import './index.css';
-import { Container } from "react-bootstrap";
+// import './Wordle.css';
+// import { Container } from "react-bootstrap";
 
-export default function Wordle() {
+function Wordle() {
   return (
-    <div >
-      <Container classname="wordle">
-        <div class="title">
-          <h1> Wordle In React! </h1>
-        </div>
+    <div>
+      {/* <Container className="Wordle"> */}
+      <div className="title">
+        <h1> Wordle In React! </h1>
+      </div>
 
-        {/* <div class="message-container">Message</div>
+      <div className="message-container">
+        <p>Message</p>
+      </div>
 
-        <div class="tile-container">Tiles</div>
+      <div className="tile-container">
+        <p>Tiles</p>
+      </div>
 
-        <div class="keyboard-container">keyboard</div> */}
-      </Container>
+      <div className="keyboard-container">
+        <p>keyboard</p>
+      </div>
+      {/* </Container> */}
     </div>
   );
 }
+
+console.log('message');
+
+export default Wordle;

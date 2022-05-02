@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 // import './App.css';
-import Wordle from './Wordle';
+import Wordle from "./Wordle";
 
 function App() {
-<Wordle/>
+  return <Wordle />;
 }
 
 export default App;
