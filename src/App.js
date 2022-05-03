@@ -1,5 +1,6 @@
 import React from "react";
 import {useState, useEffect} from 'react';
+import Wordle from './components/Wordle';
 // import './App.css';
 
 
@@ -19,9 +20,9 @@ function App() {
   return (
     <div className="App">
       <h1>Wordle Clone in React</h1>
-      {solution && <div>Solution is: {solution}</div>}
+      {solution && < Wordle solution={solution} />}
     </div>
-  )
+  );
 }
 
 
