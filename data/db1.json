@@ -1,0 +1,21 @@
+
+{
+    "solutions": [
+        {"word": "giver", "id": 1},
+        {"word": "arise", "id": 2},
+        {"word": "paste", "id": 3},
+        {"word": "moves", "id": 4},
+        {"word": "table", "id": 5},
+        {"word": "phone", "id": 6},
+        {"word": "scene", "id": 7},
+        {"word": "plate", "id": 8},
+        {"word": "treat", "id": 9},
+        {"word": "bring", "id": 10},
+        {"word": "choir", "id": 11},
+        {"word": "chair", "id": 12},
+        {"word": "paste", "id": 13},
+        {"word": "cloud", "id": 14},
+        {"word": "build", "id": 15},
+        {"word": "frame", "id": 16}
+    ]
+}
