@@ -1,18 +1,19 @@
 import { useState } from "react";
 
-const useWordle = () => {
+const useWordle = (solution) => {
   const [turn, setTurn] = useState(0);
   const [currentGuess, setCurrentGuess] = useState("");
-  const [guesses, setGuesses] = useState([...ArrayBuffer(6)]); //each guess is an array
-  const [history, setHistory] = useState([]); //each guess is a string
+  const [guesses, setGuesses] = useState([...Array(6)]); //each guess is an array
+  const [history, setHistory] = useState([]) // each guess is a string
   const [isCorrect, setIsCorrect] = useState(false);
 
   // format a guess into an array of letter objects
+  // e.g. [{key: 'a', color: 'yellow}]
   const formatGuess = () => {
-      let solutionArray = [...solution]
-      let formattedGuess = [...currentGuess].map((l) => {
-        return {key: l, color: 'grey'}
-      });
+    let solutionArray = [...solution]
+    let formattedGuess = [...currentGuess].map((l) => {
+      return {key: l, color: 'grey'}
+    })
 
       // find any green letters
       formattedGuess.forEach((l, i) => {
@@ -24,10 +25,10 @@ const useWordle = () => {
 
       //find any yellow colors
       formattedGuess.forEach((l, i) => {
-          if (solutionArray.includes(l.key) && l.color !== 'green') {
-              formattedGuess[i].color = 'yellow'
-              solutionArray[solutionArray.indexOf(l.key)] = null
-          }
+        if (solutionArray.includes(l.key) && l.color !== 'green') {
+          formattedGuess[i].color = 'yellow'
+          solutionArray[solutionArray.indexOf(l.key)] = null
+        }
       })
 
       return formattedGuess
@@ -37,18 +38,18 @@ const useWordle = () => {
   // update the isCorrect state if the guess is correct
   // add one to the turn state
   const addNewGuess = (formattedGuess) => {
-      if (currentGuess === solution) {
+    if (currentGuess === solution) {
           setIsCorrect(true)
       }
-      setGuesses((prevGuesses) => {
+      setGuesses(prevGuesses => {
         let newGuesses = [...prevGuesses]
         newGuesses[turn] = formattedGuess
         return newGuesses
       })
-      setHistory(() => {
+      setHistory(prevHistory => {
           return [...prevHistory, currentGuess]
       })
-      setTurn(() => {
+      setTurn(prevTurn => {
           return prevTurn +1
       })
       setCurrentGuess('')
@@ -79,17 +80,12 @@ const useWordle = () => {
     }
 
     if (key === "Backspace") {
-      setCurrentGuess((prev) => {
-        return prev.slice(0, -1);
-      });
-      return;
+      setCurrentGuess(prev => prev.slice(0, -1))
     }
 
     if (/^[A-Za-z]$/.test(key)) {
       if (currentGuess.length < 5) {
-        setCurrentGuess((prev) => {
-          return prev + key;
-        });
+        setCurrentGuess(prev => prev + key)
       }
     }
   };
