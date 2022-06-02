@@ -1,8 +1,5 @@
-import React from "react";
-import {useState, useEffect} from 'react';
-import Wordle from './components/Wordle';
-// import './App.css';
-
+import { useEffect, useState } from 'react'
+import Wordle from './components/Wordle'
 
 function App() {
   const [solution, setSolution] = useState(null)
@@ -19,14 +16,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Wordle Clone in React</h1>
-      {solution && < Wordle solution={solution} />}
+      <h1>Wordle (In React)</h1>
+      {solution && <Wordle solution={solution} />}
     </div>
-  );
+  )
 }
 
-
-export default App;
+export default App
 
 
 
