@@ -11,9 +11,20 @@ export default function Wordle({ solution }) {
   useEffect(() => {
     window.addEventListener('keyup', handleKeyup)
 
-    return () => window.removeEventListener('keyup', handleKeyup)
-  }, [handleKeyup])
+    if (isCorrect) {
+      console.log("you are a winner")
+      window.removeEventListener('keyup', handleKeyup)
+    }
 
+    if (turn >5 ) {
+      console.log("you are a loser")
+      window.removeEventListener('keyup'. handleKeyup)
+    }
+
+    return () => window.removeEventListener('keyup', handleKeyup)
+  }, [handleKeyup, isCorrect, turn])
+
+  // delete this later, when the code is fixed. 
   useEffect(() => {
     console.log(guesses, turn, isCorrect)
   }, [guesses, turn, isCorrect])
