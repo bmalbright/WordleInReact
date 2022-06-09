@@ -1,7 +1,5 @@
-import React from 'react'
-
-// components
-import Row from './Row'
+import React from 'react';
+import Row from './Row';
 
 export default function Grid({ guesses, currentGuess, turn }) {
   return (
@@ -13,5 +11,5 @@ export default function Grid({ guesses, currentGuess, turn }) {
         return <Row key={i} guess={g} /> 
       })}
     </div>
-  )
-}
+  );
+};

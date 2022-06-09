@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function Modal({ isCorrect, turn, solution }) {
   return (
@@ -10,16 +10,16 @@ export default function Modal({ isCorrect, turn, solution }) {
                 <p className='solution'> {solution} </p>
                 <p> You found the solution in {turn} guesses. </p>
             </div>
-        )}
+        )};
 
         {/* modal for if they lose */}
         {!isCorrect && (
             <div>
                 <h1> You have used up all of your guesses</h1>
-                <p className='solution'> {solution} </p>
+                <p className='solution'> The answer was {solution} </p>
                 <p> Better luck next time. </p>
             </div>
-        )}
+        )};
     </div>
-  )
-}
+  );
+};

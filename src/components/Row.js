@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function Row({ guess, currentGuess }) {
 
@@ -10,7 +10,7 @@ export default function Row({ guess, currentGuess }) {
         ))}
       </div>
     )
-  }
+  };
 
   if (currentGuess) {
     let letters = currentGuess.split('')
@@ -25,7 +25,7 @@ export default function Row({ guess, currentGuess }) {
         ))}
       </div>
     )
-  }
+  };
 
   return (
     <div className="row">
@@ -35,6 +35,6 @@ export default function Row({ guess, currentGuess }) {
       <div></div>
       <div></div>
     </div>
-  )
+  );
   
-}
+};

@@ -1,28 +1,29 @@
-import { useEffect, useState } from 'react'
-import Wordle from './components/Wordle'
+import { useEffect, useState } from 'react';
+import Wordle from './components/Wordle';
+import './App.css';
 
-function App() {
+export default function App() {
   const [solution, setSolution] = useState(null)
   
   useEffect(() => {
     fetch('http://localhost:3001/solutions')
       .then(res => res.json())
       .then(json => {
-        // random int between 0 & 14
+        // random int between 0 & however many words are in the json file, -1
         const randomSolution = json[Math.floor(Math.random()*json.length)]
         setSolution(randomSolution.word)
       })
-  }, [setSolution])
+  }, [setSolution]);
 
   return (
     <div className="App">
       <h1>Wordle (In React)</h1>
       {solution && <Wordle solution={solution} />}
     </div>
-  )
-}
+  );
+};
 
-export default App
+ 
 
 
 
