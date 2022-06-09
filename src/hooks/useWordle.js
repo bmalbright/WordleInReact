@@ -67,7 +67,7 @@ const useWordle = (solution) => {
           return
         };
 
-        if (l.color === 'grey' && currentColor !== 'green' && currentColor !== 'yellow') {
+        if (l.color === 'grey' && currentColor !== ('green' || 'yellow')) {
           prevUsedKeys[l.key] = 'grey'
           return
         };
