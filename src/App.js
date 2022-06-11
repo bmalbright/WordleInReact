@@ -17,7 +17,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Wordle (In React)</h1>
+      <h1>Wordle Practice App</h1>
       {solution && <Wordle solution={solution} />}
     </div>
   );
