@@ -1,4 +1,5 @@
 import React from 'react';
+import Wordle from './Wordle';
 
 export default function Modal({ isCorrect, turn, solution }) {
 
@@ -16,7 +17,9 @@ export default function Modal({ isCorrect, turn, solution }) {
                 <h2 className='solution'> {solution} </h2>
                 <br/>
                 <h3> You found the solution in {turn} guesses. </h3>
-                <button onClick={() => window.location.reload(false)}> PLAY AGAIN?</button>
+                
+                <button onClick={() => Wordle}> PLAY AGAIN?</button>
+                
             </div>
         )};
 
@@ -27,7 +30,9 @@ export default function Modal({ isCorrect, turn, solution }) {
                 <h2 className='solution'> The answer was {solution} </h2>
                 <br/>
                 <h3> Better luck next time. </h3>
-                <button onClick={() => window.location.reload(false)}> PLAY AGAIN?</button>
+                
+                <button onClick={() => Wordle}> PLAY AGAIN?</button>
+                
             </div>
         )};
     </div>
