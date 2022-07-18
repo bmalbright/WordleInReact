@@ -1,10 +1,12 @@
-const jsonServer = require("json-server");
-const server = jsonServer.create();
-const router = jsonServer.router("data/db.json");
-const middlewares = jsonServer.defaults({static: "./build" });
-const port = process.env.PORT || 3000;
+const express = require("express");
+const path = require("path");
+require('dotenv').config();
 
-server.use(middlewares);
-server.use(router);
+const app = express();
+const PORT = 3000;
 
-server.listen(port);
+app.use(express.static('public'));
+
+app.listen(PORT, () => 
+    console.log(`app listening at http://localhost:${PORT}`)
+);

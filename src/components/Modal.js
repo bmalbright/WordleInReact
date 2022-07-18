@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState } from 'react';
+
 import Wordle from './Wordle';
 
 export default function Modal({ isCorrect, turn, solution }) {
@@ -6,6 +8,16 @@ export default function Modal({ isCorrect, turn, solution }) {
     // function replayWordle() {
     //     window.location.reload(false)
     // }
+
+    // const {width, height} = useWindoSize()
+
+    const [ setShowModal ] = useState(true)
+
+    const handleClose = () => { 
+        setShowModal(false) 
+    };
+
+    // const reload=()=>window.location.reload();
 
   return (
     <div className='modal'>
@@ -18,7 +30,7 @@ export default function Modal({ isCorrect, turn, solution }) {
                 <br/>
                 <h3> You found the solution in {turn} guesses. </h3>
                 
-                <button onClick={() => Wordle}> PLAY AGAIN?</button>
+                <button onClick={handleClose} onExit={Wordle}> PLAY AGAIN?</button>
                 
             </div>
         )};
@@ -31,7 +43,7 @@ export default function Modal({ isCorrect, turn, solution }) {
                 <br/>
                 <h3> Better luck next time. </h3>
                 
-                <button onClick={() => Wordle}> PLAY AGAIN?</button>
+                <button onClick={handleClose} onExit={Wordle}> PLAY AGAIN?</button>
                 
             </div>
         )};
