@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import useWordle from '../hooks/useWordle';
 import Grid from './Grid';
 import Keypad from './Keypad';
-import Modal from './Modal';
+import GameModal from './Modal';
+import Button from 'react-bootstrap/Button';
 
 
 export default function Wordle({ solution }) {
@@ -31,11 +32,15 @@ export default function Wordle({ solution }) {
     console.log(guesses, turn, isCorrect)
   }, [guesses, turn, isCorrect])
 
+
+  const reload=()=>window.location.reload();
+
   return (
     <div>
       <Grid guesses={guesses} currentGuess={currentGuess} turn={turn} />
       <Keypad usedKeys = {usedKeys}/>
-       {showModal && <Modal isCorrect={isCorrect} turn={turn} solution={solution} />} 
+       {showModal && <GameModal isCorrect={isCorrect} turn={turn} solution={solution} />} 
+       <Button onClick={reload}> PLAY AGAIN?</Button>
     </div>
   )
 }
