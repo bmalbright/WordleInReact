@@ -33,14 +33,16 @@ export default function Wordle({ solution }) {
   }, [guesses, turn, isCorrect])
 
 
-  const reload=()=>window.location.reload();
+  function RefreshPage() {
+    window.location.reload();
+  };
 
   return (
     <div>
       <Grid guesses={guesses} currentGuess={currentGuess} turn={turn} />
       <Keypad usedKeys = {usedKeys}/>
        {showModal && <GameModal isCorrect={isCorrect} turn={turn} solution={solution} />} 
-       <Button onClick={reload}> PLAY AGAIN?</Button>
+       <Button onClick={RefreshPage} className='button' variant="primary" size="lg"> PLAY AGAIN?</Button>
     </div>
   )
 }
