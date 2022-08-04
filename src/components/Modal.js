@@ -2,16 +2,23 @@ import React from 'react';
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-// import Wordle from './Wordle';
+
 
 export default function GameModal({ isCorrect, turn, solution }) {
 
 
     const [showModal, setShowModal] = useState(true)
 
+    const reload=()=>window.location.reload();
+
     const handleClose = () => {
         setShowModal(false)
+        reload();
     };
+
+    // function RefreshPage(event) {
+    //     window.location.reload();
+    // };
 
 
     return (
@@ -29,7 +36,7 @@ export default function GameModal({ isCorrect, turn, solution }) {
                     </Modal.Body>
 
                     <Modal.Footer>
-                        <Button variant="primary" onClick={handleClose} className="button">
+                        <Button variant="primary" onClick={handleClose} className="button" size="lg">
                             Close
                         </Button>
                     </Modal.Footer>
@@ -43,7 +50,7 @@ export default function GameModal({ isCorrect, turn, solution }) {
                     <Modal.Body className='solution'> The answer was {solution} </Modal.Body>
                     <Modal.Body> Better luck next time. </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="primary" onClick={handleClose} className="button">
+                        <Button variant="primary" onClick={handleClose} className="button" size="lg">
                             Close
                         </Button>
                     </Modal.Footer>

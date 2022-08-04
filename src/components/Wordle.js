@@ -4,7 +4,7 @@ import useWordle from '../hooks/useWordle';
 import Grid from './Grid';
 import Keypad from './Keypad';
 import GameModal from './Modal';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 
 
 export default function Wordle({ solution }) {
@@ -27,22 +27,30 @@ export default function Wordle({ solution }) {
     return () => window.removeEventListener('keyup', handleKeyup)
   }, [handleKeyup, isCorrect, turn])
 
+
+ 
+
   // delete this later, when the code is fixed. 
   useEffect(() => {
     console.log(guesses, turn, isCorrect)
   }, [guesses, turn, isCorrect])
 
+// // trying to add a refresh button
+//   function RefreshPage(event) {
+//     window.location.reload();
 
-  function RefreshPage() {
-    window.location.reload();
-  };
+//     const button = document.querySelector('.button');
+//     button.addEventListener('click', RefreshPage);
+//   };
+
+
 
   return (
     <div>
       <Grid guesses={guesses} currentGuess={currentGuess} turn={turn} />
       <Keypad usedKeys = {usedKeys}/>
        {showModal && <GameModal isCorrect={isCorrect} turn={turn} solution={solution} />} 
-       <Button onClick={RefreshPage} className='button' variant="primary" size="lg"> PLAY AGAIN?</Button>
+       {/* <Button onClick={RefreshPage} className='button' variant="primary" size="lg"> PLAY AGAIN?</Button> */}
     </div>
   )
 }
