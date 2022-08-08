@@ -9,12 +9,12 @@ export default function GameModal({ isCorrect, turn, solution }) {
 
     const [showModal, setShowModal] = useState(true)
 
-    const reload=()=>window.location.reload(false);
+    // const reload=()=>window.location.reload(false);
 
-    const handleClose = () => {
-        setShowModal(false)
-        reload();
-    };
+    // const handleClose = () => {
+    //     setShowModal(false)
+    //     reload();
+    // };
 
     // function RefreshPage(event) {
     //     window.location.reload();
@@ -34,12 +34,12 @@ export default function GameModal({ isCorrect, turn, solution }) {
                     <Modal.Body>
                         You found the solution in {turn} guesses.
                     </Modal.Body>
-
+{/* 
                     <Modal.Footer>
                         <Button variant="primary" onClick={handleClose} className="button" size="lg">
                             Close
                         </Button>
-                    </Modal.Footer>
+                    </Modal.Footer> */}
                 </Modal>
             )};
 
@@ -49,11 +49,11 @@ export default function GameModal({ isCorrect, turn, solution }) {
                     <Modal.Header> You have used up all of your guesses</Modal.Header>
                     <Modal.Body className='solution'> The answer was {solution} </Modal.Body>
                     <Modal.Body> Better luck next time. </Modal.Body>
-                    <Modal.Footer>
+                    {/* <Modal.Footer>
                         <Button variant="primary" onClick={handleClose} className="button" size="lg">
                             Close
                         </Button>
-                    </Modal.Footer>
+                    </Modal.Footer> */}
                 </Modal>
             )};
         </div>
