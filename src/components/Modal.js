@@ -9,7 +9,7 @@ export default function GameModal({ isCorrect, turn, solution }) {
 
     const [showModal, setShowModal] = useState(true)
 
-    const reload=()=>window.location.reload();
+    const reload=()=>window.location.reload(false);
 
     const handleClose = () => {
         setShowModal(false)
@@ -26,7 +26,7 @@ export default function GameModal({ isCorrect, turn, solution }) {
             {/* modal for if they win */}
             {isCorrect && (
 
-                <Modal show={showModal} onHide={handleClose} size="sm">
+                <Modal show={showModal} size="sm">
                     <Modal.Header> Congratulations! You Win!</Modal.Header>
                     <Modal.Body className='solution'>
                         {solution}
@@ -45,7 +45,7 @@ export default function GameModal({ isCorrect, turn, solution }) {
 
             {/* modal for if they lose */}
             {!isCorrect && (
-                <Modal show={showModal} onHide={handleClose} size="sm">
+                <Modal show={showModal} size="sm">
                     <Modal.Header> You have used up all of your guesses</Modal.Header>
                     <Modal.Body className='solution'> The answer was {solution} </Modal.Body>
                     <Modal.Body> Better luck next time. </Modal.Body>
