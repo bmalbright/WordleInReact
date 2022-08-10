@@ -6,7 +6,7 @@ export default function Keypad({usedKeys}) {
 
     // changed "http://localhost:3001" to PORT
     useEffect(() => {
-        fetch('PORT/letters')
+        fetch('https://wordlepractice.herokuapp.com/letters')
             .then(res => res.json())
             .then(json => {
                 setLetters(json)
