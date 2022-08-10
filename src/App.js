@@ -5,8 +5,9 @@ import './App.css';
 export default function App() {
   const [solution, setSolution] = useState(null)
   
+  // changed "http://localhost:3001" to PORT
   useEffect(() => {
-    fetch('http://localhost:3001/solutions')
+    fetch('PORT/solutions')
       .then(res => res.json())
       .then(json => {
         // random int between 0 & however many words are in the json file, -1
