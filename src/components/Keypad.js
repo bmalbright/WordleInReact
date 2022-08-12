@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 export default function Keypad({usedKeys}) {
     const [letters, setLetters] = useState(null)
 
-    // changed "http://localhost:3001" to PORT
+    
     useEffect(() => {
-        fetch('PORT/letters')
+        fetch('http://localhost:3001/letters')
             .then(res => res.json())
             .then(json => {
                 setLetters(json)
